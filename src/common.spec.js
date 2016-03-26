@@ -1,5 +1,5 @@
 import chai from 'chai';
 import chaiImmutable from 'chai-immutable';
 
-// Add the ability to assert Immutable objects to chai
+// Add Immutable object assertion to Chai
 chai.use(chaiImmutable);

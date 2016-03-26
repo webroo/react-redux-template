@@ -22,7 +22,7 @@ export function combineImmutableReducers(reducers) {
 const initialRouterState = new Immutable.Map({locationBeforeTransitions: null});
 
 /**
- * Custom reducer for react-router-redux, designed to save router state as Immutable data.
+ * Custom reducer for react-router-redux. Saves router state as Immutable data.
  */
 export function immutableRouterReducer(state = initialRouterState, {type, payload}) {
   if (type === LOCATION_CHANGE) {

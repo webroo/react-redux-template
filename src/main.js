@@ -5,7 +5,7 @@ import 'babel-polyfill';
 import 'whatwg-fetch';
 
 import './normalize.css';
-import './main.css';
+import './global.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
