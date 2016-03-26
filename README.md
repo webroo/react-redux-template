@@ -1,8 +1,8 @@
 # React Redux Template
 
-Lightweight app template to help kickstart personal projects.
+Lightweight app template for kickstarting personal projects.
 
-*This is intended for my personal use only. It offers just enough to kickstart my own projects. It's not actively managed or maintained.*
+*This is intended for my personal use only. It's not actively managed or maintained.*
 
 ## Setup
 
@@ -16,7 +16,7 @@ Lightweight app template to help kickstart personal projects.
 
 ## Run scripts
 
-Run scripts are handled by npm using the `scripts` field in `package.json`. When running the site on localhost webpack will serve the files from memory, not disk.
+Run scripts are handled by npm using the `scripts` field in `package.json`.
 
 `npm run serve` - Serves a development version of the app at `http://localhost:8080`
 
@@ -28,11 +28,41 @@ Run scripts are handled by npm using the `scripts` field in `package.json`. When
 
 `npm run build-prod` - Builds a prod version of the app and writes the files to the `build` folder
 
-`npm run build-tests` - Builds the test suite and writes it to the `build` folder
+`npm run build-tests` - Builds the test suite and writes the files to the `build` folder
 
-`npm run test` - Runs the test suite via Node
+`npm run test` - Runs the test suite in Node
 
 `npm run test-watch` - Runs the test suite in Node and watches for file changes
+
+## Folder structure
+
+Brief overview of the folder structure. Use this to decide where to add new files.
+
+```js
+├── build // Build version ends up here
+├── src
+│   ├── components // Presentational components
+│   │   └── SearchForm // Should contain all assets (css, images, tests, etc)
+│   │       ├── SearchForm.js
+│   │       ├── SearchForm.spec.js
+│   │       ├── SearchForm.css
+│   │       └── icon.png
+│   ├── containers // Container components (connecting components, actions, selectors)
+│   │   └── ProductSearchForm
+│   │       ├── ProductSearchForm.js
+│   │       └── ProductSearchForm.spec.js
+│   ├── reducers // Redux reducers
+│   │   ├── rootReducer.js // Top-level reducer, given to the Redux store
+│   │   ├── productReducer.js
+│   │   └── productReducer.spec.js
+│   ├── selectors // Reselect selectors
+│   │   ├── productSelector.js
+│   │   └── productSelector.spec.js
+│   └── utils // Misc utilities
+│       ├── immutableUtils.js
+│       └── reactUtils.js
+└── webpack // Webpack config files
+```
 
 ## Dependencies
 
@@ -74,7 +104,7 @@ Brief overview of dependencies. Use this to decide what features can be trimmed 
   "sinon" // Sinon library for testing
   "style-loader" // Webpack style loader
   "url-loader" // Webpack url loader
-  "webpack"" //  Webpack itself
+  "webpack" //  Webpack itself
   "webpack-dev-server" // Webpack dev server for running on localhost
 }
 ```
