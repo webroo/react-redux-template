@@ -4,7 +4,7 @@ import Immutable from 'immutable';
 
 import ExampleItems from '../../components/example/exampleItems';
 import {filteredExampleItemsSelector} from '../../selectors/exampleSelector';
-import {addExampleItemAction} from '../../reducers/exampleReducer';
+import {addExampleItem} from '../../reducers/exampleReducer';
 
 // Ideally the container just composes React components and doesn't add any DOM nodes
 const ExampleContainer = ({exampleItems, addExampleItem}) => (
@@ -21,7 +21,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  addExampleItem: addExampleItemAction,
+  addExampleItem,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ExampleContainer);

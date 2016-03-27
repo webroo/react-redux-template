@@ -7,7 +7,7 @@ const initialState = Immutable.fromJS([
 // We're using the concept of 'Ducks' and putting actions and reducers in the same module
 export const ADD_EXAMPLE_ITEM = 'ADD_EXAMPLE_ITEM';
 
-export const addExampleItemAction = () => ({
+export const addExampleItem = () => ({
   type: ADD_EXAMPLE_ITEM,
   text: 'This is an example item',
 });
@@ -52,7 +52,7 @@ const getItemFailure = (itemId, error) => ({
   error,
 });
 
-export const getItemAction = itemId => {
+export const getItem = itemId => {
   return dispatch => {
     dispatch(getItemPending(itemId));
     return fetch(`http://api.localhost/item/${itemId}`)
