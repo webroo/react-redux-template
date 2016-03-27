@@ -18,7 +18,7 @@
     "serve": "npm run clean && NODE_ENV=development webpack-dev-server --config ./webpack/webpack.config.babel.js -d",
     "serve-prod": "npm run clean && NODE_ENV=production webpack-dev-server --config ./webpack/webpack.config.babel.js -d -p",
     "serve-tests": "npm run clean && NODE_ENV=development webpack-dev-server --config ./webpack/webpack.tests.config.babel.js -d",
-    "test": "mocha --compilers js:babel-register ./src/**/*.spec.js",
+    "test": "mocha --compilers js:babel-register ./src/common.spec.js ./src/**/*.spec.js",
     "test-watch": "npm run test -- --watch"
   },
   "dependencies": {

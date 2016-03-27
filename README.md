@@ -11,8 +11,13 @@ Lightweight app template for kickstarting personal projects.
 3. Modify the `name` `description` and `repository` fields in `package.json` to reflect new project
 4. Modify package dependencies if necessary
 5. Modify settings in `webpack/webpack.config.babel.js` if necessary
-6. Run `npm install`
-7. Run `npm run serve` and navigate to `http://localhost:8080`
+6. Remove the example files/folders:
+  - `src/components/example/`
+  - `src/containers/example/`
+  - `src/reducers/exampleReducer.js`
+  - `src/selectors/exampleSelector.js`
+7. Run `npm install`
+8. Run `npm run serve` and navigate to `http://localhost:8080`
 
 ## Run scripts
 

@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import Immutable from 'immutable';
 
-import ExampleItems from '../../components/example/ExampleItems';
+import ExampleItems from '../../components/example/exampleItems';
 import {filteredExampleItemsSelector} from '../../selectors/exampleSelector';
 import {addExampleItemAction} from '../../reducers/exampleReducer';
 
