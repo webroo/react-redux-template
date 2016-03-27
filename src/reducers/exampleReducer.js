@@ -20,3 +20,45 @@ export default function exampleReducer(state = initialState, action) {
       return state;
   }
 }
+
+// Example async action using redux thunks
+
+function checkStatus(response) {
+  if (response.status >= 200 && response.status < 300) {
+    return response;
+  }
+  const error = new Error(response.statusText);
+  error.response = response;
+  throw error;
+}
+
+export const GET_ITEM_PENDING = 'GET_ITEM_PENDING';
+const getItemPending = itemText => ({
+  type: GET_ITEM_PENDING,
+  itemText,
+});
+
+export const GET_ITEM_SUCCESS = 'GET_ITEM_SUCCESS';
+const getItemSuccess = (itemId, data) => ({
+  type: GET_ITEM_SUCCESS,
+  itemId,
+  data,
+});
+
+export const GET_ITEM_FAILURE = 'GET_ITEM_FAILURE';
+const getItemFailure = (itemId, error) => ({
+  type: GET_ITEM_FAILURE,
+  itemId,
+  error,
+});
+
+export const getItemAction = itemId => {
+  return dispatch => {
+    dispatch(getItemPending(itemId));
+    return fetch(`http://api.localhost/item/${itemId}`)
+      .then(checkStatus)
+      .then(response => response.json())
+      .then(json => dispatch(getItemSuccess(itemId, json)))
+      .catch(error => dispatch(getItemFailure(itemId, error)));
+  };
+};
