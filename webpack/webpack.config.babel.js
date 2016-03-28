@@ -24,6 +24,7 @@ module.exports = {
     // The CommonsChunkPlugin is then used to omit these from the main bundle
     vendor: [
       'babel-polyfill',
+      'immutable',
       'react',
       'react-dom',
       'react-router',
@@ -32,7 +33,8 @@ module.exports = {
       'redux',
       'redux-thunk',
       'redux-logger',
-      'immutable',
+      'reselect',
+      'whatwg-fetch',
     ],
     main: './src/main.js',
   },
