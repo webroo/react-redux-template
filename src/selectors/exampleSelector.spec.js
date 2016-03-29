@@ -9,7 +9,7 @@ describe('filteredExampleItemsSelector', () => {
       exampleItems: [
         'One example',
         'Two',
-      ]
+      ],
     });
     const expectedResult = Immutable.fromJS([
       'One example',
